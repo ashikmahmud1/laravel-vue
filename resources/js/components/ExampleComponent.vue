@@ -1,23 +1,43 @@
 <template>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
-                </div>
-            </div>
-        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="post in posts">
+                <td>{{post.title}}</td>
+                <td>{{post.post_text}}</td>
+                <td>{{post.created_at}}</td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </template>
 
+<style lang="scss">
+</style>
+
 <script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
+export default {
+    data() {
+        return {
+            posts: []
         }
+    },
+    mounted() {
+        console.log('Component mounted.')
+        // call the api here
+        axios.get('/api/posts').then(response => {
+            this.posts = response.data;
+            console.log(this.posts);
+        })
     }
+}
 </script>
