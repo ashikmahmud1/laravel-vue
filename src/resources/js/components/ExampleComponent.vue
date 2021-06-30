@@ -38,6 +38,11 @@ export default {
             this.posts = response.data;
             console.log(this.posts);
         })
+        axios.get('/api/user').then(response => {
+            console.log(response.data)
+        })
+    },methods: {
+
     }
 }
 </script>

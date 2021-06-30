@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,10 +14,10 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="<?php echo e(mix('css/app.css')); ?>" rel="stylesheet">
 
     <!-- Scripts -->
-    <script src="{{ mix('/js/app.js') }}" defer></script>
+    <script src="<?php echo e(mix('/js/app.js')); ?>" defer></script>
 
 </head>
 <body class="antialiased">
@@ -28,3 +28,4 @@
 </div>
 </body>
 </html>
+<?php /**PATH /Users/ashikmahmud/Documents/PhpStrom/laravel-vue/src/resources/views/welcome.blade.php ENDPATH**/ ?>
